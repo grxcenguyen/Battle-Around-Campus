@@ -1,4 +1,4 @@
-"""The functions utilized within my projet"""
+"""The functions utilized within my project"""
 
 user_name = ""
 user_weapon = ""
@@ -47,7 +47,7 @@ def set_the_scene():
         get_name()
     # Compares if the user input is B, if so it will end the game
     elif choice == "B":
-        game_over()
+        no_play()
 
         
 def get_name():
@@ -186,12 +186,31 @@ def game_over():
     None
     """
     print("You ran out of health and weren't able to save campus. Would you like to play again?")
-    choice = ask("A. yes or B. no")
+    choice = ask("A. Yes or B. No \n")
     if choice == "A":
     #if a choice is A then the game would restart 
         set_the_scene()
     else:
         print("Now who will save campus?")
+        
+
+def no_play():
+    """Asks the user if they're sure that they want to play or not and then prints a sassy statement if they choose that they don't want to play. Also continues the storyline if they would like to play
+    Parameters
+    ----------
+    None
+    
+    Returns
+    -------
+    None
+    """
+    print("We weren't able to save campus. Are you sure you don't want to play?")
+    choice = ask("A. Yes play or B. No play \n")
+    if choice == "A":
+        set_the_scene()
+    else:
+        print("Suit yourself >:(")
+        
 
     
 def take_damage(damage):
